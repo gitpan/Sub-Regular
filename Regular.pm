@@ -3,7 +3,7 @@ package Sub::Regular;
 use 5.006;
 use strict;
 use warnings;
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 require Exporter;
 use AutoLoader;
 our @EXPORT = qw/AUTOLOAD/;
@@ -30,7 +30,7 @@ sub AUTOLOAD{
     for my $k (keys %Regs){
 	goto &{"$pkg"."::${Regprefix}".$Regs{$k}} if ( $AUTOLOAD =~ /$k/i );
     }
-    die "Can't translate your sub\n";
+    die "Can't translate your sub << $AUTOLOAD >>\n";
 }
 
 

@@ -4,7 +4,6 @@ use Sub::Regular;
 ok(1);
 
 sub /look(s|ing)?_for/ { "Here" }
-
 ok( look_for("Amanda"), "Here" );
 ok( looks_for("Amanda"), "Here" );
 ok( looking_for("Amanda"), "Here" );
